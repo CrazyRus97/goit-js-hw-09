@@ -1,6 +1,6 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
-import { Report } from 'notiflix/build/notiflix-report-aio';
+// import { Report } from 'notiflix/build/notiflix-report-aio';
 
 document.body.style.backgroundColor = '#ece5da';
 const TIMER_DELAY = 1000;
@@ -10,7 +10,7 @@ let currentDate = null;
 
 const refs = {
   dateInput: document.querySelector('input#datetime-picker'),
-  btnStartTimer: document.querySelector('button[data-start-timer]'),
+  btnStartTimer: document.querySelector('button[data-start]'),
   daysRemaining: document.querySelector('[data-days]'),
   hoursRemaining: document.querySelector('[data-hours]'),
   minutesRemaining: document.querySelector('[data-minutes]'),
@@ -34,11 +34,11 @@ const options = {
 
 flatpickr(refs.dateInput, options);
 
-Report.info(
-  '👋 Greeting, my Friend!',
-  'Please, choose a date and click on start',
-  'Okay'
-);
+// Report.info(
+//   '👋 Greeting, my Friend!',
+//   'Please, choose a date and click on start',
+//   'Okay'
+// );
 
 function onDateCheck(selectedDates) {
   selectedDate = selectedDates[0].getTime();
@@ -46,18 +46,14 @@ function onDateCheck(selectedDates) {
 
   if (selectedDate > currentDate) {
     refs.btnStartTimer.disabled = false;
-    Report.success(
-      '🥰 Congratulation! Click on start!',
-      '"Do not try to become a person of success but try to become a person of value." <br/><br/>- Albert Einstein',
-      'Okay'
-    );
+    // Report.success(
+    //   '🥰 Congratulation! Click on start!',
+    //   '"Do not try to become a person of success but try to become a person of value." <br/><br/>- Albert Einstein',
+    //   'Okay'
+    // );
     return;
   }
-  Report.failure(
-    '🥺 Ooops...',
-    'Please, choose a date in the future and remember: "Knowledge rests not upon truth alone, but upon error also." - Carl Gustav Jung',
-    'Okay'
-  );
+  window.alert("Please choose a date in the future")
 }
 
 function timerStart() {
@@ -67,11 +63,11 @@ function timerStart() {
       clearInterval(intervalId);
       refs.btnStartTimer.disabled = true;
       refs.dateInput.disabled = false;
-      Report.info(
-        '👏 Congratulation! Timer stopped!',
-        'Please, if you want to start timer, choose a date and click on start or reload this page',
-        'Okay'
-      );
+      // Report.info(
+      //   '👏 Congratulation! Timer stopped!',
+      //   'Please, if you want to start timer, choose a date and click on start or reload this page',
+      //   'Okay'
+      // );
       return;
     } else {
       refs.btnStartTimer.disabled = true;

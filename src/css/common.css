@@ -16,3 +16,95 @@ img {
   display: block;
   max-width: 100%;
 }
+
+input#datetime-picker {
+  width: 200px;
+  height: 32px;
+  border: 3px;
+  background: #f1ebe5;
+
+  text-align: center;
+  font-weight: 600;
+  color: blue;
+  border: 2px solid blue;
+}
+
+input#datetime-picker[disabled] {
+  color: red;
+  border: thick double red;
+}
+
+button {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid blue;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: blue;
+  background-color: #f1ebe5;
+  transform: all 300ms linear;
+}
+
+button[data-start] {
+  margin-right: 20px;
+}
+
+button[disabled] {
+  animation: none;
+  border: 2px solid grey;
+  color: grey;
+}
+
+button:active {
+  position: relative;
+  top: 2px;
+}
+
+.timer {
+  display: flex;
+  margin-top: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+}
+
+.value {
+  font-size: 60px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+.label {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+span.flatpickr-day.selected,
+span.flatpickr-day.selected:hover {
+  background-color: blue;
+  border-color: blue;
+  color: #ffffff;
+}
+
+.flatpickr-day.today.selected {
+  background: blue;
+  border-color: blue;
+  color: #fafafa;
+}
+
+.flatpickr-time input.flatpickr-hour.selected,
+.flatpickr-time input.flatpickr-hour,
+.flatpickr-time input.flatpickr-minute,
+.flatpickr-time input.flatpickr-second {
+  font-weight: 400;
+  color: blue;
+}
