@@ -34,23 +34,12 @@ const options = {
 
 flatpickr(refs.dateInput, options);
 
-// Report.info(
-//   '👋 Greeting, my Friend!',
-//   'Please, choose a date and click on start',
-//   'Okay'
-// );
-
 function onDateCheck(selectedDates) {
   selectedDate = selectedDates[0].getTime();
   currentDate = new Date().getTime();
 
   if (selectedDate > currentDate) {
     refs.btnStartTimer.disabled = false;
-    // Report.success(
-    //   '🥰 Congratulation! Click on start!',
-    //   '"Do not try to become a person of success but try to become a person of value." <br/><br/>- Albert Einstein',
-    //   'Okay'
-    // );
     return;
   }
   window.alert("Please choose a date in the future")
@@ -63,11 +52,6 @@ function timerStart() {
       clearInterval(intervalId);
       refs.btnStartTimer.disabled = true;
       refs.dateInput.disabled = false;
-      // Report.info(
-      //   '👏 Congratulation! Timer stopped!',
-      //   'Please, if you want to start timer, choose a date and click on start or reload this page',
-      //   'Okay'
-      // );
       return;
     } else {
       refs.btnStartTimer.disabled = true;
