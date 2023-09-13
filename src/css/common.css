@@ -55,7 +55,7 @@ button[data-start] {
 button[disabled] {
   animation: none;
   border: 2px solid grey;
-  color: grey;
+  color: #f1ebe5;
 }
 
 button:active {
@@ -92,13 +92,13 @@ span.flatpickr-day.selected,
 span.flatpickr-day.selected:hover {
   background-color: blue;
   border-color: blue;
-  color: #ffffff;
+  color: #f1ebe5;
 }
 
 .flatpickr-day.today.selected {
   background: blue;
   border-color: blue;
-  color: #fafafa;
+  color: #f1ebe5;
 }
 
 .flatpickr-time input.flatpickr-hour.selected,
