@@ -8,7 +8,7 @@ const refs = {
   amount: document.querySelector('[name="amount"]'),
 }
 
-refs.form.addEventListener('click', onPromiseCreate);
+refs.form.addEventListener('submit', onPromiseCreate);
 
 function createPromise(position, delay) {
   return new Promise((resolve, reject) => {
@@ -31,14 +31,13 @@ function onPromiseCreate(e) {
   let amount = Number(refs.amount.value);
 
   for (let i = 1; i <= amount; i += 1) {
-    let promiseDelay = valueDelay + step * i;
-
-    createPromise(i, promiseDelay)
+    createPromise(i, valueDelay)
       .then(({ position, delay }) => {
         Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
       })
       .catch(({ position, delay }) => {
         Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
       });
+    valueDelay += step;
   }
 }
